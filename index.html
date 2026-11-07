@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#090d1c" />
+  <title>ETERNAL SLAYER — Idle RPG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">✦</div><div><div class="brand-name">ETERNAL <span>SLAYER</span></div><div class="brand-sub">IDLE FANTASY RPG</div></div></div>
+      <button class="currency" id="gold-top" aria-label="Gold"><span class="coin">◈</span><span id="gold-value">0</span><span class="plus">＋</span></button>
+      <button class="avatar-mini" id="settings-btn">⚙</button>
+    </header>
+    <section class="game-view" aria-label="Battle scene">
+      <canvas id="scene" width="720" height="560"></canvas>
+      <div class="scene-vignette"></div>
+      <div class="stage-label"><span class="live-dot"></span><span id="stage-name">WHISPERING WOODS</span><strong id="stage-number">01 - 01</strong></div>
+      <div class="battle-actions"><button class="speed-btn" id="speed-btn">Ⅱ <span>1×</span></button><button class="auto-btn active" id="auto-btn">✦ AUTO <span>ON</span></button></div>
+      <div class="hero-hud"><div class="hero-avatar">♙</div><div class="hero-bars"><div class="hero-name-row"><strong>ARIEL</strong><span id="hero-level">LV. 1</span></div><div class="bar hp"><i id="hero-hp-bar"></i></div><div class="bar xp"><i id="xp-bar"></i></div><div class="hero-stats"><span>❤ <b id="hero-hp-text">100 / 100</b></span><span>✦ <b id="hero-power">12</b> ATK</span></div></div></div>
+      <div class="enemy-hud"><div class="enemy-title"><span id="enemy-icon">☠</span><div><strong id="enemy-name">GLOOM SLIME</strong><small id="enemy-type">BEAST · LV. 1</small></div><b id="enemy-count">1 / 10</b></div><div class="bar enemy"><i id="enemy-hp-bar"></i></div></div>
+      <div class="combat-float" id="combat-float"></div>
+      <div class="loot-toast" id="loot-toast">+12 GOLD <span>✦</span></div>
+    </section>
+    <section class="progress-strip"><div><span class="strip-icon">⚔</span><div><small>STAGE PROGRESS</small><strong id="progress-label">1 / 10</strong></div></div><div class="progress-track"><i id="stage-progress"></i></div><button id="advance-btn" aria-label="Advance stage">›</button></section>
+    <section class="resources"><div class="resource"><span class="resource-icon gold-icon">◈</span><div><small>GOLD</small><b id="gold-res">0</b></div></div><div class="resource"><span class="resource-icon">✧</span><div><small>ESSENCE</small><b id="essence-value">0</b></div></div><div class="resource"><span class="resource-icon">◉</span><div><small>GEMS</small><b id="gems-value">0</b></div></div><button class="quest-chip" id="quest-shortcut"><span>✪</span><b>DAILY</b><i class="quest-dot"></i></button></section>
+    <section class="content-panel" id="content-panel"></section>
+    <nav class="bottom-nav" aria-label="Main menu">
+      <button class="nav-item active" data-tab="battle"><span>⚔</span><small>Battle</small></button>
+      <button class="nav-item" data-tab="character"><span>♙</span><small>Hero</small></button>
+      <button class="nav-item" data-tab="equipment"><span>⬡</span><small>Gear</small></button>
+      <button class="nav-item" data-tab="skills"><span>✧</span><small>Skills</small></button>
+      <button class="nav-item" data-tab="adventure"><span>⌖</span><small>World</small></button>
+      <button class="nav-item" data-tab="more"><span>✣</span><small>More</small></button>
+    </nav>
+    <div id="modal-root"></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
